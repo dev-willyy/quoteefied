@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Libre+Baskerville:wght@700&family=McLaren&family=Merriweather&family=Merriweather+Sans&family=Montserrat+Alternates&family=Montserrat:wght@300&family=Mulish:wght@400;600;700;900&family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400;600;700;800&family=Oswald&family=PT+Serif&family=Poppins:wght@300;400;500;600;700;900&family=Quicksand:wght@400;500;600;700&family=Raleway:wght@200;400;500;600;700;800;900&family=Sacramento&display=swap');
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+:root {
+      --my-lg-font: 4rem;
+      --my-md-font: 2rem;
+      --my-sm-font: 0.9rem;
+      --body-bg-1: #0096FF;
+      --body-bg-2: #3AB4F2;
+      --footer-bg: #65a6ab;
+      --font-color: #F5E8E4;
+      --container-bg: #E2DCC8;
+}
+
+body {
+      background-image: linear-gradient(to right, var(--body-bg-1), var(--body-bg-2));
+      background-position: center center;
+      font-family: "jost", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+}
+
+.wrapper {
+      width: 605px;
+      background: var(--container-bg);
+      border-radius: 15px;
+      padding: 30px 30px 25px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+header,
+.content :where(i, p, span) {
+      color: #202842;
+}
+
+.wrapper header {
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 1px 1px 1px var(--body-bg-2);
+      animation: 1s ease-out 0s 1 slideInLeft
+}
+
+@keyframes slideInLeft {
+      0% {
+            opacity: 0;
+            transform: translateX(-10%);
+      }
+
+      40% {
+            opacity: 0.3;
+      }
+
+      80% {
+            opacity: 0.7;
+      }
+
+      100% {
+            transform: translateX(0);
+            opacity: 1;
+      }
+}
+
+.wrapper .content {
+      margin: 35px 0;
+}
+
+.content .quote-area {
+      display: flex;
+      justify-content: center;
+}
+
+.quote-area i {
+      font-size: 15px;
+}
+
+.quote-area i:first-child {
+      margin: 3px 10px 0 0;
+}
+
+.quote-area i:last-child {
+      display: flex;
+      margin: 0 0 3px 10px;
+      align-items: flex-end;
+}
+
+.quote-area .quote {
+      font-size: 22px;
+      text-align: center;
+      word-break: break-all;
+}
+
+.content .author {
+      display: flex;
+      font-size: 16px;
+      margin-top: 20px;
+      /* font-style: italic; */
+      justify-content: flex-end;
+}
+
+.author span:first-child {
+      margin: -7px 5px 0 0;
+      font-family: monospace;
+}
+
+.wrapper .buttons {
+      border-top: 1px solid #ccc;
+}
+
+.buttons .features {
+      display: flex;
+      margin-top: 20px;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.features ul {
+      display: flex;
+}
+
+.features ul li {
+      margin: 0 5px;
+      height: 47px;
+      width: 47px;
+      display: flex;
+      cursor: pointer;
+      color: #5372F0;
+      list-style: none;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #5372F0;
+      transition: all 0.3s ease;
+}
+
+.features ul li:first-child {
+      margin-left: 0;
+}
+
+ul li:is(:hover, .active) {
+      color: #fff;
+      background: #5372F0;
+}
+
+ul .speech.active {
+      pointer-events: none;
+}
+
+.buttons button {
+      border: none;
+      color: #fff;
+      outline: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 13px 22px;
+      border-radius: 30px;
+      background: var(--body-bg-1);
+}
+
+.buttons button.loading {
+      opacity: 0.7;
+      pointer-events: none;
+}
+
+footer {
+      font-family: "jost", sans-serif;
+      font-size: var(--my-sm-font);
+      font-weight: bolder;
+      background-color: var(--footer-bg);
+      color: var(--font-color);
+      opacity: .6;
+      position: absolute;
+      bottom: 0;
+      height: 4rem;
+      width: 100vw;
+      text-align: center;
+      padding: 1.2rem;
+}
