@@ -17,47 +17,45 @@
       --container-bg: #E2DCC8;
 }
 
-html {
-      height: 100%;
-}
-
 body {
-      background-image: linear-gradient(to right, var(--body-bg-1), var(--body-bg-2));
+      background-color: var(--body-bg-1);
       background-position: center center;
       font-family: "jost", sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100%;
-      flex-direction: column;
+      min-height: 100vh;
+      max-height: 4vw;
+      padding-inline: 4vw;
 }
 
 .wrapper {
       width: 605px;
-      background: var(--font-color);
+      background: #fff;
       border-radius: 15px;
-      margin-top: 10%;
-      padding: 30px 30px 25px;
+      padding: 20px;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-}
-
-header,
-.content :where(i, p, span) {
-      color: #202842;
+      margin-top: -8rem;
 }
 
 .wrapper header {
-      font-size: 35px;
+      font-size: 38px;
       font-weight: 600;
       text-align: center;
       text-shadow: 1px 1px 1px var(--body-bg-2);
-      animation: 1.1s ease-out 0s 1 slideInLeft
+      animation: 1s ease-out 0s 1 slideInLeft
+}
+
+@media screen and (max-width: 705px) {
+      .wrapper header {
+            font-size: 7vw;
+      }
 }
 
 @keyframes slideInLeft {
       0% {
             opacity: 0;
-            transform: translateX(-13%);
+            transform: translateX(-10%);
       }
 
       40% {
@@ -72,6 +70,12 @@ header,
             transform: translateX(0);
             opacity: 1;
       }
+}
+
+
+header,
+.content :where(i, p, span) {
+      color: #202842;
 }
 
 .wrapper .content {
@@ -103,6 +107,12 @@ header,
       word-break: break-all;
 }
 
+@media screen and (max-width: 470px) {
+      .quote-area .quote {
+            font-size: 5.2vw;
+      }
+}
+
 .content .author {
       display: flex;
       font-size: 16px;
@@ -110,9 +120,24 @@ header,
       justify-content: flex-end;
 }
 
+@media screen and (max-width: 470px) {
+      .content .author {
+            font-size: 3.8vw;
+            font-weight: bold;
+            opacity: .7;
+      }
+}
+
+
 .author span:first-child {
       margin: -7px 5px 0 0;
       font-family: monospace;
+}
+
+@media screen and (max-width: 705px) {
+      .author span:first-child {
+            margin: -5px 5px 0 0;
+      }
 }
 
 .wrapper .buttons {
@@ -166,7 +191,7 @@ ul .speech.active {
       cursor: pointer;
       padding: 13px 22px;
       border-radius: 30px;
-      background: var(--body-bg-1);
+      background: #5372F0;
 }
 
 .buttons button.loading {
@@ -181,9 +206,12 @@ footer {
       background-color: var(--footer-bg);
       color: var(--font-color);
       opacity: .6;
-      margin-top: auto;
+      position: absolute;
+      bottom: 0;
       height: 4rem;
       width: 100vw;
       text-align: center;
+      white-space: nowrap;
       padding: 1.2rem;
+      z-index: -1;
 }
