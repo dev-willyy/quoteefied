@@ -12,7 +12,6 @@ function randomQuote() {
     fetch("https://free-quotes-api.herokuapp.com/")
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
             quoteText.innerText = result.quote;
             authorName.innerText = result.author;
             quoteBtn.classList.remove("loading");
