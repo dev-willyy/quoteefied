@@ -11,7 +11,7 @@
       --my-md-font: 2rem;
       --my-sm-font: 0.9rem;
       --body-bg-1: #0096FF;
-      --body-bg-2: #3AB4F2;
+      --body-bg-2: #0a5175;
       --footer-bg: #65a6ab;
       --font-color: #F5E8E4;
       --container-bg: #E2DCC8;
@@ -29,13 +29,72 @@ body {
       padding-inline: 4vw;
 }
 
+nav.nav_bar {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      background-color: #63b5dee1;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      padding: 3px;
+      box-shadow: 0 0 4px black;
+}
+
+.nav_bar ul {
+      background-color: transparent;
+      margin: 0 auto;
+      max-width: 70vw;
+      display: grid;
+      grid-template-columns: 1.2fr .1fr .1fr;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+}
+
+@media screen and (max-width: 715px) {
+      .nav_bar ul {
+            max-width: 86vw;
+      }
+}
+
+.nav_bar ul li {
+      list-style: none;
+      background-color: transparent;
+      position: relative;
+}
+
+.nav_bar ul li a {
+      text-decoration: none;
+      color: #000;
+      transition: all .2s ease-out;
+}
+
+.nav_bar ul li a:active,
+.nav_bar ul li a:hover {
+      background-color: transparent;
+      color: #fff;
+}
+
+.nav_bar ul li img {
+      border-radius: .5rem;
+      margin-top: 4px;
+}
+
+.nav_bar ul li:first-of-type::after {
+      content: "quoteefied";
+      position: absolute;
+      top: 8px;
+      left: 30px;
+      font-weight: bold;
+      text-shadow: .2px .2px var(--body-bg-2);
+}
+
 .wrapper {
       width: 605px;
       background: #fff;
       border-radius: 15px;
       padding: 20px;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-      margin-top: -8rem;
 }
 
 .wrapper header {
@@ -161,12 +220,12 @@ header,
       width: 47px;
       display: flex;
       cursor: pointer;
-      color: #5372F0;
+      color: var(--body-bg-1);
       list-style: none;
       border-radius: 50%;
       align-items: center;
       justify-content: center;
-      border: 2px solid #5372F0;
+      border: 2px solid var(--body-bg-1);
       transition: all 0.3s ease;
 }
 
@@ -174,9 +233,9 @@ header,
       margin-left: 0;
 }
 
-ul li:is(:hover, .active) {
+.features ul li:is(:hover, .active) {
       color: #fff;
-      background: #5372F0;
+      background-color: var(--body-bg-1);
 }
 
 ul .speech.active {
@@ -191,7 +250,7 @@ ul .speech.active {
       cursor: pointer;
       padding: 13px 22px;
       border-radius: 30px;
-      background: #5372F0;
+      background-color: var(--body-bg-1);
 }
 
 .buttons button.loading {
