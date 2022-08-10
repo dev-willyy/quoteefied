@@ -272,6 +272,7 @@ footer {
       width: 100vw;
       text-align: center;
       white-space: nowrap;
-      padding: 1.2rem;
+      padding: .4rem;
+      line-height: 28px;
       z-index: -1;
 }
