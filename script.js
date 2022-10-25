@@ -9,10 +9,10 @@ const quoteText = document.querySelector(".quote"),
 function randomQuote() {
     quoteBtn.classList.add("loading");
     quoteBtn.innerText = "Loading Quote...";
-    fetch("https://free-quotes-api.herokuapp.com/")
+    fetch("https://api.quotable.io/random")
         .then((response) => response.json())
         .then((result) => {
-            quoteText.innerText = result.quote;
+            quoteText.innerText = result.content;
             authorName.innerText = result.author;
             quoteBtn.classList.remove("loading");
             quoteBtn.innerText = "New Quote";
